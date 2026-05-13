@@ -11,9 +11,9 @@ function Header() {
   };
 
   return (
-    <div className="flex justify-center mt-5">
+    <div className="flex justify-center pt-5 opacity-80">
       <div className="w-5xl h-25 flex justify-start items-center gap-10 fixed bg-[#b0b0b0] rounded-[90px]">
-        <div className="relative w-2xl h-15 flex justify-center items-center gap-10 rounded-[90px] bg-[#737373] ml-10 text-white overflow-hidden">
+        <div className="relative w-2xl h-15 flex justify-center items-center gap-10 rounded-[90px] bg-[#737373] ml-10 text-white overflow-hidden font-mono">
           <div
             ref={pillRef}
             className="absolute left-5 top-1/2 -translate-y-1/2
