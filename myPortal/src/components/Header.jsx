@@ -1,70 +1,56 @@
-import React, { useRef } from "react";
+import { useState } from "react";
+import { FaReact } from "react-icons/fa";
+import { GiBatMask } from "react-icons/gi";
 
 function Header() {
-  const pillRef = useRef(null);
+  const [activeTab, setActiveTab] = useState("Home");
 
-  const movePill = (e) => {
-    const item = e.target;
-
-    pillRef.current.style.width = `${item.offsetWidth}px`;
-    pillRef.current.style.left = `${item.offsetLeft}px`;
-  };
+  const tabs = ["Home", "About", "Journey", "Skills"];
 
   return (
-    <div className="flex justify-center pt-5 opacity-80">
-      <div className="w-5xl h-25 flex justify-start items-center gap-10 fixed bg-[#b0b0b0] rounded-[90px]">
-        <div className="relative w-2xl h-15 flex justify-center items-center gap-10 rounded-[90px] bg-[#737373] ml-10 text-white overflow-hidden font-mono">
-          <div
-            ref={pillRef}
-            className="absolute left-5 top-1/2 -translate-y-1/2
-                       h-[52px] w-[120px]
-                       bg-[#e4c8ff]
-                       rounded-full
-                       transition-all duration-300 ease-in-out"
-          ></div>
-          <a
-            href="#"
-            onMouseEnter={movePill}
-            className="relative z-10 px-8 py-4 rounded-full font-medium text-white"
-          >
-            Home
-          </a>
-          <a
-            href="#"
-            onMouseEnter={movePill}
-            className="relative z-10 px-8 py-4 rounded-full font-medium text-white"
-          >
-            About me
-          </a>
+    <header className="w-full bg-[#2d2d30] border-b border-[#3e3e42] font-mono fixed top-0 z-50">
+      <div className="hidden md:flex items-center h-12">
+        <span className="px-4 text-2xl text-white">
+          <GiBatMask />
+        </span>
 
-          <a
-            href="#"
-            onMouseEnter={movePill}
-            className="relative z-10 px-8 py-4 rounded-full font-medium text-white"
-          >
-            Journey
-          </a>
+        <div className="flex items-center">
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`group relative h-12 px-6 flex items-center
+                          border-r border-[#3e3e42]
+                          transition-all duration-200 text-[12px]
 
-          <a
-            href="#"
-            onMouseEnter={movePill}
-            className="relative z-10 px-8 py-4 rounded-full font-medium text-white"
-          >
-            Skills
-          </a>
-        </div>
-
-        <div className="flex items-center gap-5">
-          <button className="w-[100px] h-[30px] text-[10px] text-white bg-black rounded-md hover:bg-white hover:text-black border border-black duration-500">
-            English
-          </button>
-
-          <button className="w-[129px] h-[39px] text-[14px] text-white bg-black rounded-[15px] hover:bg-white hover:text-black border border-black duration-500">
-            Contact
-          </button>
+                ${
+                  activeTab === tab
+                    ? "bg-[#1e1e1e] text-white"
+                    : "bg-[#2d2d30] text-[#cccccc] hover:bg-[#252526]"
+                }
+              `}
+            >
+              <span className="mr-2">
+                <FaReact className="text-[#58c3db]" />
+              </span>
+              {tab}.jsx
+              {activeTab === tab && (
+                <div className="absolute top-0 left-0 w-full h-[2px] bg-[#007acc]"></div>
+              )}
+            </button>
+          ))}
         </div>
       </div>
-    </div>
+
+      <div className="flex md:hidden items-center justify-between px-4 h-12">
+        <h1 className="text-white font-semibold flex items-center gap-2">
+          <FaReact className="text-[#58c3db]" />
+          Portfolio
+        </h1>
+
+        <button className="text-white text-2xl">☰</button>
+      </div>
+    </header>
   );
 }
 

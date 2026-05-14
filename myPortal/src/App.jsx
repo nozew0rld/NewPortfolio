@@ -5,37 +5,91 @@ import { Typewriter } from "react-simple-typewriter";
 
 function App() {
   return (
-    <div className="">
-      <div>
-        <Header />
-        <div className="w-full h-screen pt-[150px]">
-          <div className="flex flex-row justify-center gap-[15vh]">
-            <img src={me} alt="" className="w-[370px] h-[500px] rounded-4xl" />
-            <div className="text-white w-[30%] h-[500px] flex flex-col gap-10 font-[Inter]">
-              <div className="flex flex-col gap-5">
-                <p className="text-sky-400 ">{"<h1>"}</p>
-                <span className="text-5xl tracking-widest text-amber-300 inline-block  w-[500px]">
-                  <Typewriter
-                    words={["Welcome , my name is Batbaatar."]}
-                    loop={true}
-                    cursorStyle="|"
-                    typeSpeed={100}
-                    deleteSpeed={100}
-                    delaySpeed={1500}
-                    cursor
-                  />
-                </span>
-                <p className="text-sky-400 ">{"</h1>"}</p>
-              </div>
-              <div className="flex flex-col gap-5">
-                <p className="text-sky-400">{"<p>"}</p>
-                <p className=" tracking-widest text-amber-300">
-                  I'm 20yo from Mongolia. My friends call me Bat. <br />{" "}
-                  Currently studying Software Engineering at the University of
-                  Europe for Applied Science in Potsdam, Germany.
-                </p>
-                <p className="text-sky-400 ">{"</p>"}</p>
-              </div>
+    <div className="bg-[#1e1e1e] min-h-screen overflow-x-hidden">
+      <Header />
+
+      <div className="w-full min-h-screen pt-[140px] px-6">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-20">
+          <div className="relative group">
+            <img
+              src={me}
+              alt=""
+              className="
+                w-[320px] lg:w-[370px]
+                h-[430px] lg:h-[500px]
+                object-cover
+                rounded-4xl
+                border border-[#3e3e42]
+                shadow-2xl
+                transition-all duration-300
+                group-hover:scale-[1.02]
+              "
+            />
+
+            <div
+              className="
+              absolute inset-0 rounded-4xl
+              bg-[#007acc]/10
+              opacity-0 group-hover:opacity-100
+              transition-all duration-300
+            "
+            ></div>
+          </div>
+
+          <div
+            className="
+            text-white
+            w-full lg:w-[40%]
+            flex flex-col gap-12
+            font-[Inter]
+          "
+          >
+            <div className="flex flex-col gap-5">
+              <p className="text-sky-500 text-2xl font-mono">{"<h1>"}</p>
+
+              <span
+                className="
+                  font-mono
+                  text-4xl sm:text-5xl lg:text-6xl
+                  tracking-wide
+                  text-amber-300
+                  inline-block
+                  pl-4 lg:pl-8
+                  leading-tight
+                "
+              >
+                <Typewriter
+                  words={["Welcome, my name is Batbaatar."]}
+                  loop={1}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={80}
+                />
+              </span>
+
+              <p className="text-sky-500 text-2xl font-mono">{"</h1>"}</p>
+            </div>
+
+            <div className="flex flex-col gap-5 max-w-[600px]">
+              <p className="text-sky-500 text-2xl font-mono">{"<p>"}</p>
+
+              <p
+                className="
+                font-mono
+                  tracking-wide
+                  text-amber-300
+                  text-lg sm:text-xl
+                  leading-relaxed
+                  pl-4 lg:pl-8
+
+                "
+              >
+                I'm 20yo from Mongolia. My friends call me Bat. Currently
+                studying Software Engineering at the University of Europe for
+                Applied Science in Potsdam, Germany.
+              </p>
+
+              <p className="text-sky-500 text-2xl font-mono">{"</p>"}</p>
             </div>
           </div>
         </div>
