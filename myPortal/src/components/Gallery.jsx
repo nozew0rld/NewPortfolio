@@ -19,16 +19,13 @@ function Gallery() {
 
   return (
     <div className="relative w-[420px]">
-      {/* Fake Browser Window */}
       <div className="bg-[#2d2d30] rounded-3xl overflow-hidden border border-[#3e3e42] shadow-2xl">
-        {/* Top Bar */}
         <div className="h-10 bg-[#2d2d30] flex items-center px-4 gap-2">
           <div className="w-3 h-3 rounded-full bg-red-500"></div>
           <div className="w-3 h-3 rounded-full bg-yellow-300"></div>
           <div className="w-3 h-3 rounded-full bg-green-500"></div>
         </div>
 
-        {/* Image */}
         <img
           src={images[current]}
           alt=""
@@ -36,7 +33,6 @@ function Gallery() {
         />
       </div>
 
-      {/* Left Button */}
       <button
         onClick={prevSlide}
         className="absolute left-[-60px] top-1/2
@@ -47,7 +43,6 @@ function Gallery() {
         ‹
       </button>
 
-      {/* Right Button */}
       <button
         onClick={nextSlide}
         className="absolute right-[-60px] top-1/2
