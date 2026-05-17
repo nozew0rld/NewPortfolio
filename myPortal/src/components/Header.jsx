@@ -7,7 +7,7 @@ function Header() {
   const [activeTab, setActiveTab] = useState("Home");
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const tabs = ["Home", "About", "Journey", "Skills"];
+  const tabs = ["Home", "About", "Skills"];
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -30,12 +30,6 @@ function Header() {
     sections.forEach((section) => {
       observer.observe(section);
     });
-
-    return () => {
-      sections.forEach((section) => {
-        observer.unobserve(section);
-      });
-    };
   }, []);
 
   return (

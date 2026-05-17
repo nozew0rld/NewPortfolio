@@ -164,6 +164,330 @@ function App() {
           </div>
         </div>
       </section>
+      {/* Skills */}
+
+      <section id="skills">
+        <div className="w-full min-h-screen pt-20 px-6 pb-20">
+          <div className="flex justify-center ">
+            <p className="font-mono text-3xl sm:text-5xl text-white">
+              My skills
+            </p>
+          </div>
+          <div
+            className="flex flex-col
+    xl:flex-row
+    justify-center
+    items-center
+    gap-8
+    pt-10"
+          >
+            {/* Frontend */}
+            <div
+              className="
+    w-full max-w-[450px] min-h-[600px]
+    bg-[#1e1e1e]
+    border border-[#3e3e42]
+    rounded-3xl
+    overflow-hidden
+    shadow-2xl
+   
+  "
+            >
+              {/* VSCode Tab */}
+              <div
+                className="
+      h-12
+      bg-[#2d2d30]
+      border-b border-[#3e3e42]
+      flex items-center
+      px-4
+      gap-3
+      font-mono
+      text-sm
+      text-white
+    "
+              >
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                </div>
+
+                <span className="text-[#58c3db]">frontend.jsx</span>
+              </div>
+
+              <div className="flex h-full font-mono text-[15px]">
+                {/* Line Numbers */}
+                <div
+                  className="
+               w-14
+        bg-[#181818]
+        text-[#6e7681]
+        flex flex-col
+        items-end
+        pr-4 pt-6
+        gap-3
+        select-none
+      "
+                >
+                  <span>1</span>
+                  <span>2</span>
+                  <span>3</span>
+                  <span>4</span>
+                  <span>5</span>
+                  <span>6</span>
+                  <span>7</span>
+                  <span>8</span>
+                  <span>9</span>
+                  <span>10</span>
+                  <span>11</span>
+                </div>
+
+                {/* Code */}
+                <div className="flex flex-col pt-6 pl-6 gap-3 text-white">
+                  <p>
+                    <span className="text-[#c586c0]">const</span>{" "}
+                    <span className="text-[#9cdcfe]">frontend</span>{" "}
+                    <span className="text-white">=</span>{" "}
+                    <span className="text-white">{"{"}</span>
+                  </p>
+
+                  <p className="pl-6">
+                    <span className="text-[#9cdcfe]">framework</span>
+                    <span className="text-white">:</span>{" "}
+                    <span className="text-[#ce9178]">"React"</span>
+                    <span className="text-white">,</span>
+                  </p>
+
+                  <p className="pl-6">
+                    <span className="text-[#9cdcfe]">styling</span>
+                    <span className="text-white">:</span>{" "}
+                    <span className="text-[#ce9178]">"Tailwind CSS"</span>
+                    <span className="text-white">,</span>
+                  </p>
+
+                  <p className="pl-6">
+                    <span className="text-[#9cdcfe]">languages</span>
+                    <span className="text-white">:</span>{" "}
+                    <span className="text-white">[</span>
+                  </p>
+
+                  <p className="pl-12 text-[#ce9178]">"HTML",</p>
+                  <p className="pl-12 text-[#ce9178]">"CSS",</p>
+                  <p className="pl-12 text-[#ce9178]">"JavaScript",</p>
+                  <p className="pl-12 text-[#ce9178]">"TypeScript",</p>
+                  <p className="pl-12 text-[#ce9178]">"Phyton",</p>
+
+                  <p className="pl-6 text-white">]</p>
+
+                  <p className="text-white">{"}"}</p>
+                </div>
+              </div>
+            </div>
+            {/* Backend */}
+            <div
+              className="
+    w-full max-w-[450px] min-h-[600px]
+    bg-[#0c0c0c]
+    border border-[#3e3e42]
+    rounded-3xl
+    overflow-hidden
+    shadow-2xl
+   
+  "
+            >
+              {/* Terminal Header */}
+              <div
+                className="
+      h-12
+      bg-[#2d2d30]
+      border-b border-[#3e3e42]
+      flex items-center
+      px-4
+      gap-3
+      font-mono
+      text-sm
+      text-white
+    "
+              >
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                </div>
+
+                <span className="text-[#4ec9b0]">terminal</span>
+              </div>
+
+              {/* Terminal Body */}
+              <div
+                className="
+      p-6
+      font-mono
+      text-[15px]
+      text-[#d4d4d4]
+      flex flex-col
+      gap-5
+    "
+              >
+                <p>
+                  <span className="text-[#4ec9b0]">bat@portfolio</span>
+
+                  <span className="text-white">:</span>
+
+                  <span className="text-[#569cd6]">~/backend</span>
+
+                  <span className="text-white">$ npm run dev</span>
+                </p>
+
+                <p className="text-[#6a9955]">
+                  ✓ Server running successfully...
+                </p>
+
+                <p>
+                  <span className="text-[#dcdcaa]">Technologies:</span>
+                </p>
+
+                <div className="flex flex-col gap-3 pl-4">
+                  <p>
+                    <span className="text-[#4ec9b0]">✓</span> Node.js
+                  </p>
+
+                  <p>
+                    <span className="text-[#4ec9b0]">✓</span> Express.js
+                  </p>
+
+                  <p>
+                    <span className="text-[#4ec9b0]">✓</span> MongoDB
+                  </p>
+
+                  <p>
+                    <span className="text-[#4ec9b0]">✓</span> Firebase
+                  </p>
+
+                  <p>
+                    <span className="text-[#4ec9b0]">✓</span> REST APIs
+                  </p>
+                </div>
+
+                <p className="pt-6">
+                  <span className="text-[#4ec9b0]">bat@portfolio</span>
+
+                  <span className="text-white">:</span>
+
+                  <span className="text-[#569cd6]">~/backend</span>
+
+                  <span className="text-white">$ _</span>
+                </p>
+              </div>
+            </div>
+            {/* Soft skills  */}
+            <div
+              className="
+    w-full max-w-[450px] min-h-[600px]
+    bg-[#1e1e1e]
+    border border-[#3e3e42]
+    rounded-3xl
+    overflow-hidden
+    shadow-2xl
+   
+  "
+            >
+              {/* VSCode Tab */}
+              <div
+                className="
+      h-12
+      bg-[#2d2d30]
+      border-b border-[#3e3e42]
+      flex items-center
+      px-4
+      gap-3
+      font-mono
+      text-sm
+      text-white
+    "
+              >
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                </div>
+
+                <span className="text-[#dcdcaa]">skills.json</span>
+              </div>
+
+              {/* Code Area */}
+              <div className="flex h-full font-mono text-[15px]">
+                {/* Line Numbers */}
+                <div
+                  className="
+        w-14
+        bg-[#181818]
+        text-[#6e7681]
+        flex flex-col
+        items-end
+        pr-4 pt-6
+        gap-3
+        select-none
+      "
+                >
+                  <span>1</span>
+                  <span>2</span>
+                  <span>3</span>
+                  <span>4</span>
+                  <span>5</span>
+                  <span>6</span>
+                  <span>7</span>
+                  <span>8</span>
+                  <span>9</span>
+                  <span>10</span>
+                </div>
+
+                {/* JSON Content */}
+                <div className="flex flex-col pt-6 pl-6 gap-3 text-white">
+                  <p>{"{"}</p>
+
+                  <p className="pl-6">
+                    <span className="text-[#9cdcfe]">"teamwork"</span>
+                    <span className="text-white">:</span>{" "}
+                    <span className="text-[#569cd6]">true</span>
+                    <span>,</span>
+                  </p>
+
+                  <p className="pl-6">
+                    <span className="text-[#9cdcfe]">"communication"</span>
+                    <span className="text-white">:</span>{" "}
+                    <span className="text-[#569cd6]">true</span>
+                    <span>,</span>
+                  </p>
+
+                  <p className="pl-6">
+                    <span className="text-[#9cdcfe]">"adaptability"</span>
+                    <span className="text-white">:</span>{" "}
+                    <span className="text-[#569cd6]">true</span>
+                    <span>,</span>
+                  </p>
+
+                  <p className="pl-6">
+                    <span className="text-[#9cdcfe]">"problemSolving"</span>
+                    <span className="text-white">:</span>{" "}
+                    <span className="text-[#569cd6]">true</span>
+                    <span>,</span>
+                  </p>
+
+                  <p className="pl-6">
+                    <span className="text-[#9cdcfe]">"creativity"</span>
+                    <span className="text-white">:</span>{" "}
+                    <span className="text-[#569cd6]">true</span>
+                  </p>
+
+                  <p>{"}"}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
