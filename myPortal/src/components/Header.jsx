@@ -23,7 +23,7 @@ function Header() {
         });
       },
       {
-        threshold: 0.5,
+        rootMargin: "-45% 0px -45% 0px",
       },
     );
 
@@ -71,7 +71,7 @@ function Header() {
       <div className="flex md:hidden items-center justify-between px-4 h-12">
         <h1 className="text-white font-semibold flex items-center gap-2">
           <FaReact className="text-[#58c3db]" />
-          Portfolio
+          Batbaatar
         </h1>
 
         {/* Hamburger Button */}
@@ -108,11 +108,13 @@ function Header() {
               border-b border-[#3e3e42]
               transition-all duration-200
 
-              ${
-                activeTab === tab
-                  ? "bg-[#1e1e1e] text-white"
-                  : "text-[#cccccc] hover:bg-[#333333]"
-              }
+
+                  ${
+                    activeTab === tab
+                      ? "bg-[#1e1e1e] text-white"
+                      : "bg-[#2d2d30] text-[#cccccc] hover:bg-[#252526]"
+                  }
+
             `}
           >
             <FaReact className="text-[#58c3db]" />

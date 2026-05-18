@@ -3,6 +3,9 @@ import me from "./assets/me.png";
 import Header from "./components/Header";
 import Gallery from "./components/Gallery";
 import { Typewriter } from "react-simple-typewriter";
+import { FaGithub } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa";
 
 function App() {
   return (
@@ -22,9 +25,6 @@ function App() {
               object-cover
               rounded-4xl
               border border-[#3e3e42]
-              shadow-2xl
-              transition-all duration-300
-              group-hover:scale-[1.02]
               "
               />
 
@@ -46,7 +46,7 @@ function App() {
             font-[Inter]
             "
             >
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-5 select-none">
                 <p className="text-sky-500 text-2xl font-mono">{"<h1>"}</p>
 
                 <span
@@ -72,7 +72,7 @@ function App() {
                 <p className="text-sky-500 text-2xl font-mono">{"</h1>"}</p>
               </div>
 
-              <div className="flex flex-col gap-5 max-w-[600px]">
+              <div className="flex flex-col gap-5 max-w-[600px] select-none">
                 <p className="text-sky-500 text-2xl font-mono">{"<p>"}</p>
 
                 <p
@@ -152,6 +152,21 @@ function App() {
               This portfolio represents my progress, creativity, and the journey
               of rebuilding myself step by step as a developer.
             </p>
+            <div className=" flex text-3xl gap-2">
+              <a href="https://github.com/nozew0rld" target="_blank">
+                <FaGithub />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/batbaatar-lkhagvadorj-0397382aa/"
+                target="_blank"
+              >
+                <FaLinkedin />
+              </a>
+              <a href="https://www.instagram.com/cokeyyy_/" target="_blank">
+                <FaInstagram />
+              </a>
+            </div>
           </div>
 
           <div
@@ -169,9 +184,7 @@ function App() {
       <section id="skills">
         <div className="w-full min-h-screen pt-20 px-6 pb-20">
           <div className="flex justify-center ">
-            <p className="font-mono text-3xl sm:text-5xl text-white">
-              My skills
-            </p>
+            <p className="font-mono text-3xl sm:text-5xl text-white">Skills</p>
           </div>
           <div
             className="flex flex-col
@@ -377,7 +390,9 @@ function App() {
 
                   <span className="text-[#569cd6]">~/backend</span>
 
-                  <span className="text-white">$ _</span>
+                  <span className="text-white">
+                    $ Hire me to unlock my full potential_
+                  </span>
                 </p>
               </div>
             </div>
