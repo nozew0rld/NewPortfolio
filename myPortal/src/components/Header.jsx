@@ -7,7 +7,7 @@ function Header() {
   const [activeTab, setActiveTab] = useState("Home");
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const tabs = ["Home", "About", "Skills"];
+  const tabs = ["Home", "About", "Skills", "Contact"];
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");

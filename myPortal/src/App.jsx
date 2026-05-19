@@ -2,6 +2,7 @@ import "./App.css";
 import me from "./assets/me.png";
 import Header from "./components/Header";
 import Gallery from "./components/Gallery";
+import Contact from "./components/Contact";
 import { Typewriter } from "react-simple-typewriter";
 import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
@@ -501,6 +502,11 @@ function App() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      <section id="contact">
+        <div className="w-full h-screen">
+          <Contact />
         </div>
       </section>
     </div>
