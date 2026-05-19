@@ -1,8 +1,14 @@
-import React from "react";
 import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
+
+const emailAddress = "batbaatarlkhagvadorj0@gmail.com";
 
 const sendEmail = (e) => {
   e.preventDefault();
+  if (!name || !email || !message) {
+    toast.error("Please fill all fields");
+    return;
+  }
 
   emailjs
     .sendForm(
@@ -20,6 +26,16 @@ const sendEmail = (e) => {
 };
 
 function Contact() {
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(emailAddress);
+      toast.success("Email copied to clipboard");
+    } catch (error) {
+      console.log(error);
+      toast.error("Could not copy email.");
+    }
+  };
+
   return (
     <div
       className="
@@ -44,7 +60,7 @@ function Contact() {
       shadow-2xl
     "
       >
-        {/* VSCode Header */}
+        {/* Header starting here */}
         <div
           className="
         h-12
@@ -117,9 +133,13 @@ function Contact() {
               <div>
                 <p className="text-[#6a9955] text-sm">EMAIL</p>
 
-                <a href="" className="text-white">
-                  batbaatarlkhagvadorj0@gmail.com
-                </a>
+                <div
+                  className="text-white cursor-pointer hover:text-[#58c3db]
+                        transition-all"
+                  onClick={handleCopyEmail}
+                >
+                  {emailAddress}
+                </div>
               </div>
 
               <div>

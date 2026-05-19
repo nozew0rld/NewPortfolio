@@ -7,10 +7,13 @@ import { Typewriter } from "react-simple-typewriter";
 import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <div className="bg-[#1e1e1e] min-h-screen overflow-x-hidden">
+      <ToastContainer position="top-right" theme="dark" autoClose={2000} />
       <Header />
       <section id="home">
         {/* Home  */}
