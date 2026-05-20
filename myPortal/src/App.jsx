@@ -496,7 +496,7 @@ function App() {
         </div>
       </section>
       <section id="contact">
-        <div className="w-full h-screen">
+        <div className="w-full min-h-screen">
           <Contact />
         </div>
       </section>

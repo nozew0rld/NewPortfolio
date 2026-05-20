@@ -31,8 +31,6 @@ export const translations = {
       "Nachdem ich nach Pinecone eine Pause vom Programmieren gemacht hatte, motivierte mich der Beginn meines Studiums dazu, mich wieder mit dem Programmieren zu beschäftigen und meine Fähigkeiten weiterzuentwickeln.",
     aboutMe4:
       "Dieses Portfolio repräsentiert meinen Fortschritt, meine Kreativität und den Weg, mich Schritt für Schritt als Entwickler weiterzuentwickeln.",
-    skills: "My skills",
-    about: "Über mich",
     skills: "Meine Fähigkeiten",
   },
 

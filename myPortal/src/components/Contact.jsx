@@ -138,7 +138,7 @@ function Contact() {
                 <p className="text-[#6a9955] text-sm">EMAIL</p>
 
                 <div
-                  className="text-white cursor-pointer hover:text-[#58c3db]
+                  className="text-white cursor-pointer break-all hover:text-[#58c3db]
                         transition-all"
                   onClick={handleCopyEmail}
                 >

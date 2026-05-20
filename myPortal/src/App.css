@@ -6,6 +6,17 @@ body,
   min-height: 100%;
   margin: 0;
 }
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
 html {
   scroll-behavior: smooth;
 }
