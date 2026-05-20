@@ -1,21 +1,17 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
+import { Swiper, SwiperSlide } from "swiper/react";
 import img1 from "../assets/me1.png";
 import img2 from "../assets/me2.png";
 import img3 from "../assets/me3.png";
+import "swiper/css";
 
 function Gallery() {
+  const swiperRef = useRef(null);
+
   const images = [img1, img2, img3];
 
   const [current, setCurrent] = useState(0);
-
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % images.length);
-  };
-
-  const prevSlide = () => {
-    setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
 
   return (
     <div className="relative w-[420px]">
@@ -25,16 +21,27 @@ function Gallery() {
           <div className="w-3 h-3 rounded-full bg-yellow-300"></div>
           <div className="w-3 h-3 rounded-full bg-green-500"></div>
         </div>
-
-        <img
-          src={images[current]}
-          alt=""
-          className="w-full h-[500px] object-cover"
-        />
+        <Swiper
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          loop={true}
+        >
+          {images.map((img, index) => (
+            <SwiperSlide key={index}>
+              <img
+                src={img}
+                alt=""
+                className="w-full h-[500px] object-cover select-none"
+                draggable="false"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
 
       <button
-        onClick={prevSlide}
+        onClick={() => swiperRef.current.slidePrev()}
         className="absolute left-[-60px] top-1/2
                    -translate-y-1/2
                    text-white text-4xl
@@ -44,7 +51,7 @@ function Gallery() {
       </button>
 
       <button
-        onClick={nextSlide}
+        onClick={() => swiperRef.current.slideNext()}
         className="absolute right-[-60px] top-1/2
                    -translate-y-1/2
                    text-white text-4xl

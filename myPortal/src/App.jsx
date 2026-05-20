@@ -3,6 +3,9 @@ import me from "./assets/me.png";
 import Header from "./components/Header";
 import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
+import LanguageSwitcher from "./components/LanguageSwitcher";
+import { useState } from "react";
+import { translations } from "./translations";
 import { Typewriter } from "react-simple-typewriter";
 import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
@@ -11,10 +14,13 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
+  const [language, setLanguage] = useState("English");
+  const t = translations[language];
   return (
     <div className="bg-[#1e1e1e] min-h-screen overflow-x-hidden">
-      <ToastContainer position="top-right" theme="dark" autoClose={2000} />
-      <Header />
+      <ToastContainer position="top-right" theme="dark" autoClose={1000} />
+      <Header tabs={t.tabs} />
+      <LanguageSwitcher language={language} setLanguage={setLanguage} />
       <section id="home">
         {/* Home  */}
         <div className="w-full min-h-screen pt-[140px] px-6">
@@ -65,7 +71,8 @@ function App() {
                 "
                 >
                   <Typewriter
-                    words={["Welcome, my name is Batbaatar."]}
+                    key={language}
+                    words={[t.homeTitle]}
                     loop={1}
                     cursor
                     cursorStyle="|"
@@ -90,9 +97,7 @@ function App() {
                 
                 "
                 >
-                  I'm 20yo from Mongolia. My friends call me Bat. Currently
-                  studying Software Engineering at the University of Europe for
-                  Applied Science in Potsdam, Germany.
+                  {t.homeIntro}
                 </p>
 
                 <p className="text-sky-500 text-2xl font-mono">{"</p>"}</p>
@@ -123,39 +128,20 @@ function App() {
           text-white
           "
           >
-            <p className="text-4xl sm:text-5xl">About me</p>
+            <p className="text-4xl sm:text-5xl">{t.about}</p>
 
             <p className="text-base sm:text-lg leading-relaxed text-[#d4d4d4]">
-              I was born and raised in Mongolia and graduated from high school
-              in 2023. During my high school years, I joined a coding academy
-              called{" "}
-              <a
-                href="https://pinecone.mn/"
-                target="_blank"
-                className="text-amber-300"
-              >
-                Pinecone
-              </a>
-              , where I spent a year learning programming and successfully
-              completed the course.
+              {t.aboutMe}{" "}
             </p>
 
             <p className="text-base sm:text-lg leading-relaxed text-[#d4d4d4]">
-              After graduating, I moved to Ireland to improve my English and
-              lived there for about a year. Later, I decided to continue my
-              journey in Germany, where I am currently studying Software
-              Engineering.
+              {t.aboutMe2}
             </p>
 
             <p className="text-base sm:text-lg leading-relaxed text-[#d4d4d4]">
-              Since taking a break from coding after Pinecone, starting
-              university motivated me to reconnect with programming and continue
-              improving my skills.
+              {t.aboutMe3}
             </p>
-            <p>
-              This portfolio represents my progress, creativity, and the journey
-              of rebuilding myself step by step as a developer.
-            </p>
+            <p>{t.aboutMe4}</p>
             <div className=" flex text-3xl gap-2">
               <a href="https://github.com/nozew0rld" target="_blank">
                 <FaGithub />
@@ -188,7 +174,9 @@ function App() {
       <section id="skills">
         <div className="w-full min-h-screen pt-20 px-6 pb-20">
           <div className="flex justify-center ">
-            <p className="font-mono text-3xl sm:text-5xl text-white">Skills</p>
+            <p className="font-mono text-3xl sm:text-5xl text-white">
+              {t.skills}
+            </p>
           </div>
           <div
             className="flex flex-col

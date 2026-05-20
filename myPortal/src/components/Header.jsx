@@ -3,11 +3,11 @@ import { FaReact } from "react-icons/fa";
 import { GiBatMask } from "react-icons/gi";
 import { HiMenu, HiX } from "react-icons/hi";
 
-function Header() {
-  const [activeTab, setActiveTab] = useState("Home");
-  const [menuOpen, setMenuOpen] = useState(false);
+const tabIds = ["home", "about", "skills", "contact"];
 
-  const tabs = ["Home", "About", "Skills", "Contact"];
+function Header({ tabs }) {
+  const [activeTab, setActiveTab] = useState("home");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -15,10 +15,7 @@ function Header() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveTab(
-              entry.target.id.charAt(0).toUpperCase() +
-                entry.target.id.slice(1),
-            );
+            setActiveTab(entry.target.id);
           }
         });
       },
@@ -40,17 +37,17 @@ function Header() {
         </span>
 
         <div className="flex items-center">
-          {tabs.map((tab) => (
+          {tabIds.map((tabId, index) => (
             <a
-              key={tab}
-              href={`#${tab.toLowerCase()}`}
-              onClick={() => setActiveTab(tab)}
+              key={tabId}
+              href={`#${tabId}`}
+              onClick={() => setActiveTab(tabId)}
               className={`group relative h-12 px-6 flex items-center
                           border-r border-[#3e3e42]
                           transition-all duration-200 text-[12px]
 
                 ${
-                  activeTab === tab
+                  activeTab === tabId
                     ? "bg-[#1e1e1e] text-white"
                     : "bg-[#2d2d30] text-[#cccccc] hover:bg-[#252526]"
                 }
@@ -59,8 +56,8 @@ function Header() {
               <span className="mr-2">
                 <FaReact className="text-[#58c3db]" />
               </span>
-              {tab}.jsx
-              {activeTab === tab && (
+              {tabs[index]}.jsx
+              {activeTab === tabId && (
                 <div className="absolute top-0 left-0 w-full h-[2px] bg-[#007acc]"></div>
               )}
             </a>
@@ -97,11 +94,14 @@ function Header() {
           ${menuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"}
         `}
       >
-        {tabs.map((tab) => (
+        {tabIds.map((tabId, index) => (
           <a
-            key={tab}
-            href={`#${tab.toLowerCase()}`}
-            onClick={() => setMenuOpen(false)}
+            key={tabId}
+            href={`#${tabId}`}
+            onClick={() => {
+              setActiveTab(tabId);
+              setMenuOpen(false);
+            }}
             className={`
               flex items-center gap-3
               px-6 py-4
@@ -110,7 +110,7 @@ function Header() {
 
 
                   ${
-                    activeTab === tab
+                    activeTab === tabId
                       ? "bg-[#1e1e1e] text-white"
                       : "bg-[#2d2d30] text-[#cccccc] hover:bg-[#252526]"
                   }
@@ -118,7 +118,7 @@ function Header() {
             `}
           >
             <FaReact className="text-[#58c3db]" />
-            {tab}.jsx
+            {tabs[index]}.jsx
           </a>
         ))}
       </div>

@@ -5,23 +5,27 @@ const emailAddress = "batbaatarlkhagvadorj0@gmail.com";
 
 const sendEmail = (e) => {
   e.preventDefault();
+
+  const form = e.currentTarget;
+  const formData = new FormData(form);
+  const name = formData.get("user_name")?.trim();
+  const email = formData.get("user_email")?.trim();
+  const message = formData.get("message")?.trim();
+
   if (!name || !email || !message) {
-    toast.error("Please fill all fields");
+    toast.error("Please fill all fields.");
     return;
   }
 
   emailjs
-    .sendForm(
-      "service_y0h9r7h",
-      "template_tsb7i3h",
-      e.target,
-      "PByVR63btzuhMMG57",
-    )
+    .sendForm("service_y0h9r7h", "template_tsb7i3h", form, "PByVR63btzuhMMG57")
     .then(() => {
-      alert("Message sent!");
+      toast.success("Message sent successfully!");
+      form.reset();
     })
     .catch((error) => {
       console.log(error);
+      toast.error("Could not send message. Please try again.");
     });
 };
 
